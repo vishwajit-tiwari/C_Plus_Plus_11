@@ -8,7 +8,7 @@
 <!-- Unorderd List -->
 1. **Uniform intializations**
     1. Initialization with curly braces
-    1. std::initializer list
+    1. std::initializer listexit
 1. **Brace or equal initializer**
 1. **Constructors**
     1. Initializer-List Constructors
@@ -77,7 +77,7 @@ int values[] = {1,2,3};   // intialization of aggregates
 
 <!-- Fourth topic -->
 
-#### 1. Type determination with auto, decltype and trailing return type
+#### 4. Type determination with auto, decltype and trailing return type
 
 1. **auto**
     1. auto was redefined in c++ 11.
