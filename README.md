@@ -109,7 +109,7 @@ int values[] = {1,2,3};   // intialization of aggregates
         auto add(int a, int b) { return a+b; }
         ```
 
-    1. **With lambda expression:** As the return type of function provided each return statement returns same type of varaible (with c++11).
+    1. **With lambda expression:** As the return type of lambda expression provided each return statement returns same type of varaible (with c++11).
 
         ```c++
         auto add = [](int x, int y) { return x+y; };
