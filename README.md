@@ -132,5 +132,67 @@ int values[] = {1,2,3};   // intialization of aggregates
         auto& y = 20;      // r-value refercnce
         ```
 
-1. **delctype**
+    1. **With templates, iterators and complex expressions:**
+
+        ```c++
+        Example 1. Using auto with templates
+
+        template <typname T, typename U>
+        auto multiply(T a, U b)
+        {
+            return a*b;
+        }
+        ```
+
+        ```c++
+        Example 2. Using auto with iterators
+
+        vector<int>numbers = {1,2,3,4,5,6};
+        for(auto iterator = numbers.begin(); iterator != numbers.end(); iterator++)
+        {
+            cout<<"iterator = "<<*iterator<<endl;
+        }
+        ```
+
+    1. **Restrictions on auto:** auto variable can not be combined with other type specifier declaration.
+
+        ```c++
+        auto int a = 1;  // error! wrong!
+        auto x = 1, y = 3.5  // error! wrong!
+        auto *ptr = new auto(10), *y = new auto(20.5); // error!
+        auto x = 1, y = 2; // ok!
+        ```
+
+        ```c++
+        Identifier declared using auto must have initializer:
+
+        auto x = x+5;  // error!
+        auto x = 10;   // ok!
+        auto y = 10+3  // ok!
+        ```
+
+        ```c++
+        Identifier declared using auto can not be type casted, nor you can apply sizeof or typeid operator.
+
+        (auto)x; //error!
+        sizeof(auto); // error!
+        
+        auto x = 1;
+        sizeof(x); // ok!
+        ```
+
+1. **delctype:** 
+    - An operator which results in "evaluating the declared type" of an expression which acts as operand in C++ 11.
+    - Assign type to a variable based on the type of specified expression.
+    - "Determine the type" of an expression "dynamically at compile time".
+    - Let you extract the data type from a variable/expression passed to it.
+
+        ```c++
+        int x = 10;
+        decltype(x) a = x+2;    // compiler deduce int datatype
+        decltype(5) a;          // compiler deduce int datatype
+        decltype(5+10) b;       // compiler deduce int datatype
+        decltype(int(12.5)) x;  // compiler deduce int datatype 
+        ```
+
 
