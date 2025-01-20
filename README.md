@@ -137,7 +137,7 @@ int values[] = {1,2,3};   // intialization of aggregates
         ```c++
         Example 1. Using auto with templates
 
-        template <typname T, typename U>
+        template <typename T, typename U>
         auto multiply(T a, U b)
         {
             return a*b;
@@ -194,5 +194,3 @@ int values[] = {1,2,3};   // intialization of aggregates
         decltype(5+10) b;       // compiler deduce int datatype
         decltype(int(12.5)) x;  // compiler deduce int datatype 
         ```
-
-
