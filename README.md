@@ -80,11 +80,11 @@ int values[] = {1,2,3};   // intialization of aggregates
 #### 4. Type determination with auto, decltype and trailing return type
 
 1. **auto**
-    1. auto was redefined in c++ 11.
-    1. Now used to let the compiler automatically "deduced the data type" of the declared variable or lambda expression parameter "from its initialization expression" at "compile time".
-    1. Make code compact and easy.
-    1. No need to explicitly specifying the type of variable on declaration. avoid writing complex type.
-    1. No worry about type conversions.
+    - auto was redefined in c++ 11.
+    - Now used to let the compiler automatically "deduced the data type" of the declared variable or lambda expression parameter "from its initialization expression" at "compile time".
+    - Make code compact and easy.
+    - No need to explicitly specifying the type of variable on declaration. avoid writing complex type.
+    - No worry about type conversions.
 
     ```c++
     auto rollNo = 12345;         // Compiler deduced "int"
