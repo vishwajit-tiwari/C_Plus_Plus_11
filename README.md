@@ -194,3 +194,36 @@ int values[] = {1,2,3};   // intialization of aggregates
         decltype(5+10) b;       // compiler deduce int datatype
         decltype(int(12.5)) x;  // compiler deduce int datatype 
         ```
+
+        **Points to remember with decltype use:**
+
+        - If the operand to decltype operator is a "function call" or "overloaded operator call" then it yields function's return type.
+
+            ```c++
+            double f() {return 22.5;}
+            decltype (f()) var1;       // const double
+            ```
+
+        - If function is a overloaded function then it is mandatory to specify paranthesis (along with parameter(s)) to represent appropriate function.
+
+            ```c++
+            int f() {return 0;}
+            int f(int x) {return x;}
+
+            decltype (f) var1;      // incorrect!
+            decltype (f(a)) var1;   // correct 
+            decltype (f()) var2;    // correct 
+            ```
+
+        - If the operand to decltype operator is an l-value then it yields T&.
+
+            ```c++
+            int x;
+            decltype (x) var1;   // int&
+            ```
+
+        - If the operand to a decltype operator is an expression involving operators then:
+
+            - In case of ampersand (&x) it yields T* where T is non-refernce type of x.
+            - In case of logical and comparision operators it yields bool.
+            - In case of assignment operators, it yields l-value refernce to left hand operand type.
